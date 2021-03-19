@@ -6,17 +6,27 @@ public class Projekt {
         System.out.println("Witaj, podaj rozmiar planszy");
         int dim = new Scanner(System.in).nextInt();
         char[][] board = new char[dim][dim];
-        int movesCounter = 0;
-        char activePlayer = 'X';
+        int ruch1 = 0;
+        char ruch2 = 'X';
 
-        while(movesCounter<dim*dim){
+        while(ruch1<dim*dim){
             printBoard(board);
-            boolean moveWasCorrect = performMove(board,activePlayer);
+            boolean moveWasCorrect = performMove(board,ruch2);
             if(moveWasCorrect){
-                movesCounter++;
-                activePlayer = activePlayer == 'X' ? 'O' : 'X';
+                ruch1++;
+                ruch2 = ruch2 == 'X' ? 'O' : 'X';
             } else {
                 System.out.println("Zly ruch, spróbuj ponownie");
+            }
+            if (board[0][0] == 'X' && board[1][1] == 'X' && board[2][2] == 'X'){
+                System.out.println("Wygrana X");
+                printBoard(board);
+                break;
+            }
+            else if (board[0][0] == 'O' && board[1][1] == 'O' && board[2][2] == 'O'){
+                System.out.println("Wygrana O");
+                printBoard(board);
+                break;
             }
         }
     }
@@ -27,13 +37,17 @@ public class Projekt {
         System.out.println(activePlayer + ", podaj nr kolumny");
         int col = new Scanner(System.in).nextInt();
 
-        if (board[row][col] == 0) {
+
+
+            if (board[row][col] == 0) {
             board[row][col] = activePlayer;
             return true;
         }
         else {
             return false;
         }
+
+
     }
     private static void printBoard(char[][] board) {
         int dim = board.length;
