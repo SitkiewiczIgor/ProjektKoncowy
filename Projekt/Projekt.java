@@ -9,21 +9,91 @@ public class Projekt {
         int ruch1 = 0;
         char ruch2 = 'X';
 
-        while(ruch1<dim*dim){
+        while(ruch1<dim*dim) {
             printBoard(board);
-            boolean moveWasCorrect = performMove(board,ruch2);
-            if(moveWasCorrect){
+            boolean moveWasCorrect = performMove(board, ruch2);
+            if (moveWasCorrect) {
                 ruch1++;
                 ruch2 = ruch2 == 'X' ? 'O' : 'X';
             } else {
                 System.out.println("Zly ruch, spróbuj ponownie");
             }
-            if (board[0][0] == 'X' && board[1][1] == 'X' && board[2][2] == 'X'){
+            if (board[0][0] == 'X' && board[1][1] == 'X' && board[2][2] == 'X') {
                 System.out.println("Wygrana X");
                 printBoard(board);
                 break;
             }
-            else if (board[0][0] == 'O' && board[1][1] == 'O' && board[2][2] == 'O'){
+            if (board[0][0] == 'X' && board[0][1] == 'X' && board[0][2] == 'X') {
+                System.out.println("Wygrana X");
+                printBoard(board);
+                break;
+            }
+            if (board[0][0] == 'X' && board[1][0] == 'X' && board[2][0] == 'X') {
+                System.out.println("Wygrana X");
+                printBoard(board);
+                break;
+            }
+            if (board[0][1] == 'X' && board[1][1] == 'X' && board[2][1] == 'X') {
+                System.out.println("Wygrana X");
+                printBoard(board);
+                break;
+            }
+            if (board[1][0] == 'X' && board[1][1] == 'X' && board[1][2] == 'X') {
+                System.out.println("Wygrana X");
+                printBoard(board);
+                break;
+            }
+            if (board[2][0] == 'X' && board[2][1] == 'X' && board[2][2] == 'X') {
+                System.out.println("Wygrana X");
+                printBoard(board);
+                break;
+            }
+            if (board[0][2] == 'X' && board[1][2] == 'X' && board[2][2] == 'X') {
+                System.out.println("Wygrana X");
+                printBoard(board);
+                break;
+            }
+            if (board[0][2] == 'X' && board[1][1] == 'X' && board[2][0] == 'X') {
+                System.out.println("Wygrana X");
+                printBoard(board);
+                break;
+            }
+            else if (board[0][0] == 'O' && board[1][1] == 'O' && board[2][2] == 'O') {
+                System.out.println("Wygrana O");
+                printBoard(board);
+                break;
+            }
+            else if (board[0][0] == 'O' && board[0][1] == 'O' && board[0][2] == 'O') {
+                System.out.println("Wygrana O");
+                printBoard(board);
+                break;
+            }
+            else if (board[0][0] == 'O' && board[1][0] == 'O' && board[2][0] == 'O') {
+                System.out.println("Wygrana O");
+                printBoard(board);
+                break;
+            }
+            else if (board[0][1] == 'O' && board[1][1] == 'O' && board[2][1] == 'O') {
+                System.out.println("Wygrana O");
+                printBoard(board);
+                break;
+            }
+            else if (board[1][0] == 'O' && board[1][1] == 'O' && board[1][2] == 'O') {
+                System.out.println("Wygrana O");
+                printBoard(board);
+                break;
+            }
+            else if (board[2][0] == 'O' && board[2][1] == 'O' && board[2][2] == 'O') {
+                System.out.println("Wygrana O");
+                printBoard(board);
+                break;
+            }
+            else if (board[0][2] == 'O' && board[1][2] == 'O' && board[2][2] == 'O') {
+                System.out.println("Wygrana O");
+                printBoard(board);
+                break;
+            }
+            else if (board[0][2] == 'O' && board[1][1] == 'O' && board[2][0] == 'O') {
                 System.out.println("Wygrana O");
                 printBoard(board);
                 break;
